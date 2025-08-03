@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kivwa – Music Portfolio</title>
+  <style>
+    :root {
+      --pink-glow: #f1a3c4;
+      --track-bg: #1c1c1c;
+      --track-border: #2a2a2a;
+      --btn-bg: #333;
+      --btn-hover: #444;
+      --btn-active: #555;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #0e0e0e;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      padding: 3rem 2rem;
+      text-align: center;
+      background: #1a1a1a;
+      box-shadow: inset -4px -4px 8px #2a2a2a, inset 4px 4px 8px #0a0a0a;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: var(--pink-glow);
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px var(--pink-glow);
+    }
+
+    h2 {
+      font-weight: 300;
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      color: #bbbbbb;
+    }
+
+    .avatar {
+      margin-top: 2rem;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--pink-glow);
+      box-shadow: 0 0 15px var(--pink-glow);
+    }
+
+    section {
+      width: 90%;
+      max-width: 800px;
+      padding: 2rem;
+      background: #1a1a1a;
+      box-shadow: 8px 8px 16px #0a0a0a, -8px -8px 16px #2a2a2a;
+      border-radius: 16px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .music-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .track {
+      background: var(--track-bg);
+      border: 1px solid var(--track-border);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: inset 4px 4px 8px #0a0a0a, inset -4px -4px 8px #2a2c2a;
+    }
+
+    .track-title {
+      margin: 0 0 0.8rem;
+      font-weight: bold;
+      color: var(--pink-glow);
+      text-shadow: 0 0 6px var(--pink-glow);
+      font-size: 1.1rem;
+    }
+
+    .waveform-player {
+      position: relative;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height: 90px;
+    }
+
+    .waveform {
+      width: 100%;
+      height: 80px;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: -10%;
+      left: 47,5%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      z-index: 2;
+      padding: 0;
+    }
+
+    .play-btn svg {
+      display: block;
+      filter: drop-shadow(0 0 4px var(--pink-glow));
+    }
+
+    footer {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: var(--pink-glow);
+      background: #1f1f1f;
+      margin: 0 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 3px 3px 6px #0c0c0c, -3px -3px 6px #2c2c2c;
+      transition: all 0.2s ease;
+      display: inline-block;
+      text-shadow: 0 0 4px var(--pink-glow);
+    }
+
+    .social-links a:hover {
+      box-shadow: inset 3px 3px 6px #0c0c0c, inset -3px -3px 6px #2c2c2c;
+      transform: scale(1.05);
+    }
+
+    .waveform-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <header>
+    <img src="awe.png" alt="Kivwa avatar" class="avatar" />
+    <h1>Kivwa</h1>
+    <h2>Versatile Music Composer · 5 Years of Experience</h2>
+  </header>
+
+  <section>
+    <p>
+      Hi! I'm Kivwa, a music composer with over 5 years of experience crafting sound across all genres. 
+      Whether it's ambient, electronic, cinematic, lo-fi, or something completely experimental — I love it all.
+    </p>
+    <p>
+      My goal is to turn emotion into sound and help creators like you bring your stories to life with music. 
+      I put heart and intention into every note.
+    </p>
+  </section>
+
+  <section>
+    <h2 style="color: var(--pink-glow); text-shadow: 0 0 8px var(--pink-glow);">Featured Music</h2>
+    <div class="music-section">
+
+      <!-- Track 1 -->
+      <div class="track">
+        <div class="track-title">Monocum</div>
+        <div id="waveform1" class="waveform-player"></div>
+      </div>
+
+      <!-- Track 2 -->
+      <div class="track">
+        <div class="track-title">Unleashed</div>
+        <div id="waveform2" class="waveform-player"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.youtube.com/channel/UCm_J_m6_tbNKHwlV1YBH7cw" target="_blank">YouTube</a>
+      <a href="https://www.fiverr.com/awelie/make-you-a-song?context_referrer=seller_page&ref_ctx_id=0a689a123bec4d12b4594cad390b23ce&pckg_id=1&pos=1&imp_id=c648018a-8625-4e81-b5f2-bf6139fc3fd6" target="_blank">Fiverr</a>
+      <a href="https://open.spotify.com/intl-es/artist/6UNwj4HNCcyd7k65oORwVj" target="_blank">Spotify</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+  <script>
+    function createWaveTrack(containerId, audioFile) {
+      const container = document.querySelector(containerId);
+      container.innerHTML = `
+        <div class="waveform-flex">
+          <button class="play-btn" aria-label="Play/Pause">
+            <svg class="icon-play" width="32" height="32" viewBox="0 0 32 32" fill="var(--pink-glow)">
+              <polygon points="10,8 26,16 10,24"/>
+            </svg>
+            <svg class="icon-pause" width="32" height="32" viewBox="0 0 32 32" fill="var(--pink-glow)" style="display:none;">
+              <rect x="10" y="8" width="4" height="16"/>
+              <rect x="18" y="8" width="4" height="16"/>
+            </svg>
+          </button>
+          <div class="waveform"></div>
+        </div>
+      `;
+
+      const waveformDiv = container.querySelector('.waveform');
+      const playBtn = container.querySelector('.play-btn');
+      const iconPlay = container.querySelector('.icon-play');
+      const iconPause = container.querySelector('.icon-pause');
+
+      const wavesurfer = WaveSurfer.create({
+        container: waveformDiv,
+        waveColor: '#f1a3c4',
+        progressColor: '#fff',
+        height: 50,
+        barWidth: 2,
+        responsive: true,
+      });
+
+      wavesurfer.load(audioFile);
+
+      playBtn.addEventListener('click', () => {
+        wavesurfer.playPause();
+      });
+
+      wavesurfer.on('play', () => {
+        iconPlay.style.display = 'none';
+        iconPause.style.display = '';
+      });
+
+      wavesurfer.on('pause', () => {
+        iconPlay.style.display = '';
+        iconPause.style.display = 'none';
+      });
+
+      wavesurfer.on('finish', () => {
+        iconPlay.style.display = '';
+        iconPause.style.display = 'none';
+        wavesurfer.seekTo(0);
+      });
+    }
+
+    // Track names 
+    createWaveTrack('#waveform1', 'michi.mp3');
+    createWaveTrack('#waveform2', 'Unleashed.mp3');
+  </script>
+</body>
+</html>
